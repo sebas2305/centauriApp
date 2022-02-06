@@ -1,0 +1,13 @@
+// inside app/frontend/packs/application.scss
+
+// Just a quick ugly style to see if our CSS works
+$primary: #00FFA9;
+.alerta {
+  position: relative;
+  padding: 1rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+// Import Bootstrap v5
+@import "~bootstrap/scss/bootstrap";

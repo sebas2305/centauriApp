@@ -1,0 +1,49 @@
+<h2>Sign up</h2>
+
+<div class="mt-5">
+
+  <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+    <div class="row align-items-center g-lg-5 py-5">
+      <div class="col-lg-7 text-center text-lg-start">
+        <%= image_tag "signup.svg", height: 400, width: 400 %>
+        <h1 class="display-4 fw-bold lh-1 mb-3">Regístrate en <span class="text-primary">Centauri</span></h1>
+        <p class="col-lg-10 fs-4"> Estas un paso más cerca de acceder a todos los beneficios que tiene Centauri para ti </p>
+      </div>
+      <div class="col-md-10 mx-auto col-lg-5">
+
+        <div class="p-4 p-md-5 border rounded-3 bg-light">
+          <h3 class="display-6 mb-3">Registro</h3>
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+
+            <div class="field">
+              <%= f.label :email, class:'form-label' %><br />
+              <%= f.email_field :email, class:"form-control", autofocus: true, autocomplete: "email" %>
+            </div>
+
+            <div class="field">
+              <%= f.label :password %>
+              <% if @minimum_password_length %>
+                <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <% end %><br />
+              <%= f.password_field :password, autocomplete: "new-password", class:"form-control" %>
+            </div>
+
+            <div class="field">
+              <%= f.label :password_confirmation %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control" %>
+            </div>
+
+            <div class="actions">
+              <%= f.submit "Sign up", class:"w-100 btn btn-lg btn-primary my-4" %>
+            </div>
+          <% end %>
+
+          <%= render "devise/shared/links" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

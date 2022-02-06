@@ -1,0 +1,29 @@
+<div class="mt-5">
+
+  <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+    <div class="row align-items-center g-lg-5 py-5">
+      <div class="col-lg-7 text-center text-lg-start">
+        <%= image_tag "login.svg", height: 430, width: 430 %>
+        <h1 class="display-4 fw-bold lh-1 mb-3">Bienvenido a <span class="text-primary">Centauri</span></h1>
+        <p class="col-lg-10 fs-4">Si ya te encuentras registrado podrás acceder con tu correo electrónico y contraseña </p>
+      </div>
+      <div class="col-md-10 mx-auto col-lg-5">
+
+        <div class="p-4 p-md-5 border rounded-3 bg-light">
+          <h3 class="display-6 mb-3">Login</h3>
+          <%= bootstrap_form_for(:user) do |f| %>
+            <%= f.email_field :email %>
+            <%= f.password_field :password %>
+            <%= f.check_box :remember_me %>
+            <%= f.submit "Ingresar", class:"w-100 btn btn-lg btn-primary" %>
+            <div class="mt-4">
+              <%= render "devise/shared/links" %>
+            </div>
+            <hr class="my-4">
+            <small class="text-muted">Al ingresar aceptas los términos y condiciones de la plataforma.</small>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

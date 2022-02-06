@@ -15,4 +15,11 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
+// inside app/frontend/packs/application.js
+
+// Add this line
+import '../js/bootstrap_js_files.js'
+import "@fortawesome/fontawesome-free/js/all";
+import "@fortawesome/fontawesome-free/css/all";
+
 console.log('Hello World from Webpacker')

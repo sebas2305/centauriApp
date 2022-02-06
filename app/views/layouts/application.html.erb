@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Centauri</title>
+  <%= favicon_link_tag asset_path('logo.png') %>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <!-- Warning !! ensure that "stylesheet_pack_tag" is used, line below -->
+  <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+
+<%= render 'home/nav' %>
+<% unless alert.nil? %>
+  <div class="mt-5 alerta alert-danger text-center" role="alert">
+    <%= alert %>
+  </div>
+<% end %>
+<% unless notice.nil? %>
+  <div class="mt-5 alerta alert-primary text-center mb-n5 " role="alert">
+    <%= notice %>
+  </div>
+<% end %>
+<%= yield %>
+
+</body>
+<footer>
+  <%= render 'home/footer' %>
+</footer>
+</html>

@@ -1,0 +1,47 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark mb-5">
+  <div class="container-fluid">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <%= image_tag "logo.png", height: 40, width: 40 %>
+      </a>
+    </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active text-primary" aria-current="page" href="/">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-primary" href="#">Sobre nosotros</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link link-primary dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Productos y servicios
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Servicios de instalación</a></li>
+            <li><a class="dropdown-item" href="#">Productos</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Financiación</a></li>
+          </ul>
+        </li>
+        <div>
+          <li class="nav-item mx-2">
+          <% if signed_in? %>
+              <%= link_to destroy_user_session_path, method: :delete, class: 'btn btn-outline-primary ml-2 rounded-pill' do %>
+                <i class="fas fa-sign-out-alt fa-sm mx-2"></i>Salir
+              <% end %>
+          <% else %>
+            <%#= link_to "Registrarse", new_user_registration_path %>
+              <%= link_to new_user_session_path, method: :get, class: 'btn btn-outline-primary ml-2 rounded-pill' do %>
+                <i class="fas fa-user fa-sm mx-2"></i>Login
+              <% end %>
+          <% end %>
+        </li>
+        </div>
+      </ul>
+    </div>
+  </div>
+</nav>
