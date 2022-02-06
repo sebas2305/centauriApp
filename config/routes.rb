@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'page/form'
+  get 'page/about'
+  get 'page/products'
+  get 'page/services'
+
+
   resources :contacts
   devise_for :users
 

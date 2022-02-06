@@ -23,15 +23,22 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
 
-    respond_to do |format|
-      if @contact.save
-        format.html { redirect_to contact_url(@contact), notice: "Contact was successfully created." }
-        format.json { render :show, status: :created, location: @contact }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @contact.errors, status: :unprocessable_entity }
-      end
+    if @contact.save
+      flash[:success] = "Thanks! I'll be in touch soon!"
+      redirect_to page_form_url
+    else
+      render :action => 'new'
     end
+
+    # respond_to do |format|
+    #   if @contact.save
+    #     format.html { redirect_to contact_url(@contact), notice: "Contact was successfully created." }
+    #     format.json { render :show, status: :created, location: @contact }
+    #   else
+    #     format.html { render :new, status: :unprocessable_entity }
+    #     format.json { render json: @contact.errors, status: :unprocessable_entity }
+    #   end
+    #end
   end
 
   # PATCH/PUT /contacts/1 or /contacts/1.json

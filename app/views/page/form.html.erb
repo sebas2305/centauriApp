@@ -1,0 +1,14 @@
+<div class="px-4 py-5 my-5 text-center">
+  <%= image_tag "ok.svg", height: 520, width: 520 %>
+  <h1 class="display-5 fw-bold">Gracias por enviar tu solicitud</h1>
+  <div class="col-lg-6 mx-auto">
+    <p class="lead mb-4">Nos pondremos en contacto pronto para atender tu solicitud. Si quieres una experiencia más completa inicia sesión o regístrate en nuestra plataforma</p>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+        <%= link_to new_user_registration_path, method: :get, class: 'btn btn-primary rounded-pill btn-lg px-4 ml-2' do %>
+          <i class="fas fa-user-plus fa-sm mx-2"></i>Regístrate
+        <% end %>
+    </div>
+  </div>
+</div>
+</div>
