@@ -1,28 +1,55 @@
-<div class="px-4 pt-5 my-5 text-center">
+<div class="px-4 pt-5 my-5 text-center"  id="contact_form">
   <h1 class="display-4 fw-bold">Contáctanos</h1>
   <div class="col-lg-6 mx-auto">
     <%= image_tag "form.svg", height: 200, width: 220 %>
     <p class="lead mb-4">Déjanos tu información y te contactaremos lo más pronto posible para asesorarte en lo que necesites </p>
 
     <div class="text-start">
-      <form>
-        <div class="form-group mb-3">
-          <h5 for=" exampleFormControlInput1">Nombre Completo</h5>
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+      <%= form_with(model: @contact) do |form| %>
+        <% if @contact.errors.any? %>
+          <div style="color: red">
+            <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+            <ul>
+              <% @contact.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="my-3">
+          <%= form.label :name, "Nombre", style: "display: block", class:"" %>
+          <%= form.text_field :name, class:"form-control" %>
         </div>
-        <div class="form-group mb-3">
-          <h5 for="exampleFormControlInput1">Correo electrónico</h5>
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Juan Rodríguez">
+
+        <div class="my-3">
+          <%= form.label :email, "Email", style: "display: block" %>
+          <%= form.text_field :email, class:"form-control" %>
         </div>
-        <div class="form-group mb-3">
-          <h5 for="exampleFormControlTextarea1">Descripción de la solicitud</h5>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+
+        <div class="my-3">
+          <%= form.label :cellphone, "Celular", style: "display: block" %>
+          <%= form.text_field :cellphone , class:"form-control" %>
         </div>
-        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center my-5">
-          <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3 rounded-pill">Enviar Solicitud</button>
+
+        <div class="my-3">
+          <%= form.label :company, "Empresa (opcional)",style: "display: block" %>
+          <%= form.text_field :company, class:"form-control" %>
         </div>
-      </form>
+
+        <div class="my-3">
+          <%= form.label :content, 'Describe tu solicitud', style: "display: block" %>
+          <%= form.text_area :content, class:"form-control" %>
+        </div>
+
+        <div class="my-3 text-end">
+          <%= form.submit "Enviar solicitud", class:"btn btn-primary btn-lg px-4 me-sm-3 rounded-pill" %>
+        </div>
+      <% end %>
+    </div>
     </div>
   </div>
 </div>
 </div>
+

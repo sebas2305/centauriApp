@@ -40,7 +40,9 @@
       <h1 class="display-5 fw-bold lh-1 mb-5">Descubre lo que <span class="text-primary">CENTAURI</span> tiene para ti</h1>
       <p class="lead mb-5">No solo brindamos información comparativa, sino también información clara y entendible para todo público. Los usuarios podrán ver <span class="text-primary font-weight-bold fw-bold">precio</span> de diferentes ofertantes, <span class="text-primary fw-bold">beneficios</span> entre una opción y otra, tiempo de retorno de <span class="text-primary fw-bold">inversión</span>, comparación entre consumo y usabilidad</p>
       <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
-        <button type="button" class="btn btn-primary rounded-pill btn-lg px-4">Regístrate</button>
+        <%= link_to new_user_registration_path, method: :get, class: 'btn btn-primary rounded-pill btn-lg px-4 ml-2' do %>
+          <i class="fas fa-user-plus fa-sm mx-2"></i>Regístrate
+        <% end %>
       </div>
     </div>
     <div class="col-lg-4">
