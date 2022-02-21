@@ -1,5 +1,5 @@
 <%= render 'hero' %>
-<div class="container px-4 pt-5 pb-3" id="icon-grid">
+<div class="container px-4 pb-3" id="icon-grid">
   <h2 class="pb-2 fw-bold border-bottom">Facilitamos el acceso a un mundo más sostenible</h2>
 
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
@@ -46,7 +46,9 @@
       </div>
     </div>
     <div class="col-lg-4">
-      <%= image_tag "info2.svg", height: 500, width: 500 %>
+      <div class="text-center mb-5 d-none d-sm-none d-md-block"><%= image_tag "info2.svg", height: 500, width: 500 %></div>
+      <div class="d-block d-sm-block d-md-none text-center mb-5"><%= image_tag "info2.svg", height: 250, width: 250 %></div>
+
     </div>
   </div>
 </div>

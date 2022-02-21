@@ -1,54 +1,153 @@
-<div class="px-4 pt-5 my-5 text-center"  id="contact_form">
-  <h1 class="display-4 fw-bold">Contáctanos</h1>
-  <div class="col-lg-6 mx-auto">
-    <%= image_tag "form.svg", height: 200, width: 220 %>
-    <p class="lead mb-4">Déjanos tu información y te contactaremos lo más pronto posible para asesorarte en lo que necesites </p>
+<div class="px-4 pt-5 text-center bg-secondary pb-5"  id="contact_form">
+  <p class="lead text-white mb-5 mx-lg-5">En CENTAURI estamos convencidos de que puedes ayudar al planeta reduciendo tu consumo. Así que déjanos tu información y te contactaremos lo más pronto posible para ayudarte a resolver tus dudas o necesidades </p>
+  <div class="container">
+    <div class="row">
+      <div class="col mx-lg-5">
 
-    <div class="text-start">
-      <%= form_with(model: @contact) do |form| %>
-        <% if @contact.errors.any? %>
-          <div style="color: red">
-            <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+        <h1 class="h2 fw-bold text-primary mb-4">CONTÁCTANOS</h1> <br>
 
-            <ul>
-              <% @contact.errors.each do |error| %>
-                <li><%= error.full_message %></li>
+        <div class="text-start bg-white px-4 py-4 border rounded">
+          <%= form_with(model: @contact) do |form| %>
+            <% if @contact.errors.any? %>
+              <div style="color: red">
+                <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+                <ul>
+                  <% @contact.errors.each do |error| %>
+                    <li><%= error.full_message %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+
+            <div class="my-3">
+              <%= form.label :name, "Nombre", style: "display: block", class:"" %>
+              <%= form.text_field :name, class:"form-control" %>
+            </div>
+
+            <div class="my-3">
+              <%= form.label :email, "Email", style: "display: block" %>
+              <%= form.text_field :email, class:"form-control" %>
+            </div>
+
+            <div class="my-3">
+              <%= form.label :cellphone, "Celular", style: "display: block" %>
+              <%= form.text_field :cellphone , class:"form-control" %>
+            </div>
+
+            <div class="my-3">
+              <%= form.label :company, "Empresa (opcional)",style: "display: block" %>
+              <%= form.text_field :company, class:"form-control" %>
+            </div>
+
+            <div class="my-3">
+              <%= form.label :content, 'Describe tu solicitud', style: "display: block" %>
+              <%= form.text_area :content, class:"form-control" %>
+            </div>
+            </div>
+            <div class="my-3 text-center">
+              <%= form.submit "Enviar solicitud", class:"btn btn-primary btn-lg px-4 me-sm-3 rounded-pill" %>
+            </div>
+          <% end %>
+
+
+
+
+      </div>
+      <div class="col mx-lg-5">
+
+        <h1 class="h2 fw-bold text-primary">COTIZA ENTRE CIENTOS DE EMPRESAS</h1>
+          <div class="text-start bg-white border rounded px-4 py-4">
+
+            <%= form_with(model: @quote) do |form| %>
+              <% if @quote.errors.any? %>
+                <div style="color: red">
+                  <h2><%= pluralize(quote.errors.count, "error") %> prohibited this quote from being saved:</h2>
+
+                  <ul>
+                    <% quote.errors.each do |error| %>
+                      <li><%= error.full_message %></li>
+                    <% end %>
+                  </ul>
+                </div>
               <% end %>
-            </ul>
-          </div>
-        <% end %>
 
-        <div class="my-3">
-          <%= form.label :name, "Nombre", style: "display: block", class:"" %>
-          <%= form.text_field :name, class:"form-control" %>
-        </div>
+              <div class="row">
+                <div class="col">
 
-        <div class="my-3">
-          <%= form.label :email, "Email", style: "display: block" %>
-          <%= form.text_field :email, class:"form-control" %>
-        </div>
+                  <div>
+                    <%= form.label :name, "Nombre", style: "display: block" %>
+                    <%= form.text_field :name, class:"form-control"  %>
+                  </div>
 
-        <div class="my-3">
-          <%= form.label :cellphone, "Celular", style: "display: block" %>
-          <%= form.text_field :cellphone , class:"form-control" %>
-        </div>
+                  <div>
+                    <%= form.label :email, "Email", style: "display: block" %>
+                    <%= form.email_field :email, class:"form-control"  %>
+                  </div>
 
-        <div class="my-3">
-          <%= form.label :company, "Empresa (opcional)",style: "display: block" %>
-          <%= form.text_field :company, class:"form-control" %>
-        </div>
+                  <div>
+                    <%= form.label :cellphone, "Célular", style: "display: block" %>
+                    <%= form.text_field :cellphone, class:"form-control"  %>
+                  </div>
 
-        <div class="my-3">
-          <%= form.label :content, 'Describe tu solicitud', style: "display: block" %>
-          <%= form.text_area :content, class:"form-control" %>
-        </div>
+                  <div>
+                    <%= form.label :company, "Empresa (opcional)", style: "display: block" %>
+                    <%= form.text_field :company, class:"form-control"  %>
+                  </div>
 
-        <div class="my-3 text-end">
-          <%= form.submit "Enviar solicitud", class:"btn btn-primary btn-lg px-4 me-sm-3 rounded-pill" %>
-        </div>
-      <% end %>
+                  <div>
+                    <%= form.label :location, "Ubicación", style: "display: block" %>
+                    <%= form.text_field :location, class:"form-control"  %>
+                  </div>
+
+                  <div>
+                    <%= form.label :address, "Dirección", style: "display: block" %>
+                    <%= form.text_field :address, class:"form-control"  %>
+                  </div>
+
+                  <div>
+                    <%= form.label :construction, "Tipo de construcción", style: "display: block" %>
+                    <%= form.text_field :construction, class:"form-control"  %>
+                  </div>
+
+                </div>
+                <div class="col">
+
+                  <div>
+                    <%= form.label :roof, "Tipo de techo", style: "display: block" %>
+                    <%= form.text_field :roof, class:"form-control"  %>
+                  </div>
+
+                  <div>
+                    <%= form.label :billvalue, "Valor de la factura", style: "display: block" %>
+                    <%= form.number_field :billvalue, class:"form-control"  %>
+                  </div>
+
+                  <div>
+                    <%= form.label :equipment , "Equipos especiales", style: "display: block" %>
+                    <%= form.text_field :equipment, class:"form-control"  %>
+                  </div>
+
+                  <div class="my-3">
+                    <%= form.label :comments, "Comentarios", style: "display: block" %>
+                    <%= form.text_area :comments, class:"form-control" %>
+                  </div>
+
+
+                </div>
+              </div>
+
+
+
+
+              </div>
+              <div class="my-3">
+                <%= form.submit "Enviar cotización", class:"btn btn-primary btn-lg px-4 me-sm-3 rounded-pill"%>
+              </div>
+            <% end %>
+      </div>
     </div>
-    </div>
+
   </div>
 </div>
 </div>
