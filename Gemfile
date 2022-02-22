@@ -9,9 +9,6 @@ gem "rails", "~> 7.0.1"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
-gem "pg"
-
-
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
@@ -82,7 +79,6 @@ group :test do
 end
 
 group :production do
-  ruby "3.0.2"
   gem "pg"
   gem "rails_12factor"
 end
