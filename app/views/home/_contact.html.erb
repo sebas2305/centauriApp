@@ -6,7 +6,7 @@
 
         <h1 class="h2 fw-bold text-primary mb-4">CONTÁCTANOS</h1> <br>
 
-        <div class="text-start bg-white px-4 py-4 border rounded">
+        <div class="text-start bg-white border-primary px-4 py-4 border rounded">
           <%= form_with(model: @contact) do |form| %>
             <% if @contact.errors.any? %>
               <div style="color: red">
@@ -57,7 +57,7 @@
       <div class="col mx-lg-5">
 
         <h1 class="h2 fw-bold text-primary">COTIZA ENTRE CIENTOS DE EMPRESAS</h1>
-          <div class="text-start bg-white border rounded px-4 py-4">
+          <div class="text-start bg-white border border-primary rounded px-4 py-4">
 
             <%= form_with(model: @quote) do |form| %>
               <% if @quote.errors.any? %>
